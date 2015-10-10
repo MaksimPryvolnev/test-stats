@@ -18,7 +18,7 @@ class TSUser {
 		$userName = $this->db->real_escape_string($this->userName);
 		$password = $this->db->real_escape_string($this->password);
 		$hash = password_hash($password, PASSWORD_DEFAULT);
-		$email = $this->db->real_escape_string($this->email);
+   		$email = $this->db->real_escape_string($this->email);
 		$login = $this->db->real_escape_string($this->login);
 		$result = $this->db->query("INSERT into users (name, email, login, password) values('$userName', '$email', '$login', '$hash')");
 		

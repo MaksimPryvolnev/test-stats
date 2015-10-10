@@ -38,6 +38,12 @@ if(!empty($_POST)) {
 	}
 }
 
+$loginPassError = "";
+// Echo error massage if password or username is incorect
+if (isset($login) && $login == false) {
+	$loginPassError = "Wrong login or password";
+}
+
 $pagetitle = 'Login';
 
 include 'view/login-view.php';

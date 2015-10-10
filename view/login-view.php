@@ -1,15 +1,11 @@
 <?php
 include'header.php';
-
-if (isset($login) && $login == false) {
-	echo 'error';
-}
 ?>
-
+<p class="loginPassError"><?php echo $loginPassError; ?></p>
 <form class="login" action="login.php" method="post">
-	<label for="name">Enter login name:</label><input name="login" id="name" type="text"><p></p>
-	<label for="password">Enter password:</label><input name="password" id="password" type="password">
-	<button type="submit">Submit</button>
+		<div><label for="name">Enter login name:</label><input name="login" id="name" type="text"></div>
+        <div class="field"><label for="password">Enter password:</label><input name="password" id="password" type="password"></div>
+        <button type="submit">Submit</button>
 </form>
 
 <?php

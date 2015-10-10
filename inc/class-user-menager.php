@@ -6,25 +6,37 @@ class TSUserManager {
 		$this->db = $db;
 	}
 
+	public function emailExist($email) {
+		$email = $this->db->real_escape_string($email);
+		$sql = $this->db->query("SELECT * FROM users WHERE email='$email'");
+		echo "SELECT * FROM users WHERE email='$email'";
+		var_dump($sql);
+		echo $this->db->error;
+		if ($sql && $sql->num_rows > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
 	public function login($login, $password) {
 		$login = $this->db->real_escape_string($login);
 		$password = $this->db->real_escape_string($password);
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$verifyHash = password_verify($password, $hash);
 		if ($verifyHash) {
-			$result = $this->db->query("SELECT * from users WHERE login='$login'");
+			$result = $this->db->query("SELECT * from users WHERE login='$login' AND password='$hash'");
 			if ($result && $result->num_rows == 1) {
 				$row = $result->fetch_assoc();
 				$_SESSION['user_logged_in'] = true;
 				$_SESSION['id'] = $row['id'];
-				return true;
+				return TRUE;
 			}
 			else {
-				return false;
+				return FALSE;
 			}
 		}
 		else {
-			return false;
+			return FALSE;
 		}
 
 	}

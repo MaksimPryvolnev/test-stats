@@ -2,6 +2,19 @@ body {
 	width: 960px;
 	margin: auto;
 }
+.background {
+        background-color: rgb(231, 244, 255);
+        height: 900px;
+        padding-top: 1px;
+        width: 958px;
+        border-top: 6px groove rgba(228, 255, 7, 0.18);
+        outline: none;
+        border-color: #BCE2FF;
+        box-shadow: 0 0 33px #9ecaed;
+}
+.homepage {
+        margin: 10px 10px 5px 10px;
+}
 .menu a {
 	color: rgba(41, 41, 41, 0.48);
 	text-decoration: none; 
@@ -29,32 +42,62 @@ body {
 }
 .uploadFile {
 	width: 25%;
+        margin: 10px 0px 0px 10px;
 }
 .uploadFile a {
 	color: gray;
 	text-decoration: none;
 	position: relative;
 	left: 0%;
+        background: rgba(156, 200, 255, 0.28);
+        border-radius: 7px;
+        padding: 6px;
 }
 a:hover {
 	color: black;
-	text-decoration: underline;
+	text-decoration: none;
 }
 .uploadFile a:hover {
-	padding: 3px;
-	border: 1px solid black;
+	padding: 1px;
+	border: 0px solid black;
+        border-radius: 7px;
+        box-shadow: 0 0 10px #9ecaed;
+        padding: 6px;
 }
 .upload {
 	padding: 5% 0% 0% 35%;
 }
 .upload label {
-	margin-right: 10px;
+	margin-right: 18px;
 }
 .upload label:hover {
 	text-decoration: underline;
 }
+.upload button {
+	background: rgba(156, 200, 255, 0.28);
+	text-decoration: none;
+	border: none;
+	position: absolute;
+        top: 68px;
+        width: 270px;
+	border-radius: 7px;
+}
+.upload button:hover {
+	cursor: pointer;
+        background: rgba(156, 200, 255, 0.28);
+        box-shadow: 0 0 10px #9ecaed;
+}
 .login {
-	padding: 5% 0% 0% 35%;
+	position: absolute;
+        top: 125px;
+        left: 39.5%;
+}
+.loginPassError {
+        color: red;
+        margin: 7% 0px 0px 40%;
+}
+.login .field {
+        margin-top: 10px;
 }
 .login label {
 	margin-right: 10px;
@@ -67,19 +110,24 @@ a:hover {
 	text-decoration: none;
 	border: none;
 	position: absolute;
-    top: 150px;
-    left: 495px;
-    width: 270px;
+        top: 68px;
+        width: 270px;
 	border-radius: 7px;
 }
 .login button:hover {
 	cursor: pointer;
+        background: rgba(156, 200, 255, 0.28);
+        box-shadow: 0 0 10px #9ecaed;
 }
 .login #password {
 	margin-left: 5px;
 }
 .login label {
 	padding: 7px 0 17px 0;
+}
+.error {
+        color: #FF0000;
+        padding-left: 5px;
 }
 .registration {
 	padding: 5% 0% 0% 35%;
@@ -97,11 +145,12 @@ a:hover {
 	border: none;
 	width: 233px;
 	border-radius: 7px;
-	margin-top: 10px; 
+	margin-top: 10px;
 }
 .registration .submit:hover {
 	background: rgba(156, 200, 255, 0.4);
 	cursor: pointer;
+        box-shadow: 0 0 10px #9ecaed;
 }
 .registration #password {
 	margin-left: 8px;

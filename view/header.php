@@ -18,3 +18,4 @@
 			<a href="<?php echo $base_url . 'user.php'; ?>">Sign Up</a>
 		<?php endif; ?>
 	</div>
+        <div class="background">
