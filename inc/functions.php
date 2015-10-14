@@ -8,3 +8,4 @@ function isUserLoggedIn() {
 	$loggedIn = $um->isLoggedIn();
 	return $loggedIn;
 }
+?>

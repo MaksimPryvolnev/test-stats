@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', true);
-error_reporting(E_ALL);
-
 session_start();
 
 require_once 'inc/config.php';
@@ -21,11 +18,10 @@ if ($loggedIn == false && !empty($_POST)) {
 	$email = $_POST['email'];
 	$login = $_POST['userlogin'];
 
-	$exist = $um->emailExist($email);
-	if($exist == TRUE && !empty($_POST['email'])) {
-		$errors['email'] = 'Email already exists';
-		print_r($errors['email']);
-	}
+	//$exist = $um->emailExist($email);
+	//if($exist == TRUE && !empty($_POST['email'])) {
+	//	$errors['email'] = 'Email already exists';
+	//}
 
 	if (empty($name)) {
 		$errors['name'] = 'Enter your name';
@@ -45,7 +41,6 @@ if ($loggedIn == false && !empty($_POST)) {
 
 	if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 		$errors['name'] = 'Only letters and white space allowed';
-		print_r($errors['name']);
 	}
 
 	if (strlen($password) < 6) {
@@ -65,8 +60,10 @@ if ($loggedIn == false && !empty($_POST)) {
 		$result = $user->addUser();
 		if ($result == true) {
 			// Redirect to home page.
-			header('Location:' . $base_url . 'login.php');
-			exit();
+			require 'inc/PHPMailer/PHPMailerAutoload.php';
+			$newEmail = $user->email($base_url);
+			//header('Location:' . $base_url . 'login.php');
+			//exit();
 		}
 	}
 }

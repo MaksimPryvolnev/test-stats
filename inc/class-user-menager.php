@@ -9,9 +9,7 @@ class TSUserManager {
 	public function emailExist($email) {
 		$email = $this->db->real_escape_string($email);
 		$sql = $this->db->query("SELECT * FROM users WHERE email='$email'");
-		echo "SELECT * FROM users WHERE email='$email'";
-		var_dump($sql);
-		echo $this->db->error;
+
 		if ($sql && $sql->num_rows > 0) {
 			return TRUE;
 		} else {
@@ -27,7 +25,7 @@ class TSUserManager {
 			$result = $this->db->query("SELECT * from users WHERE login='$login' AND password='$hash'");
 			if ($result && $result->num_rows == 1) {
 				$row = $result->fetch_assoc();
-				$_SESSION['user_logged_in'] = true;
+				$_SESSION['user_logged_in'] = TRUE;
 				$_SESSION['id'] = $row['id'];
 				return TRUE;
 			}
@@ -42,10 +40,10 @@ class TSUserManager {
 	}
 
 	public function isLoggedIn() {
-		if (array_key_exists('user_logged_in', $_SESSION) && $_SESSION['user_logged_in'] == true) {
-			return true;
+		if (array_key_exists('user_logged_in', $_SESSION) && $_SESSION['user_logged_in'] == TRUE) {
+			return TRUE;
 		} else {
-			return false;
+			return FALSE;
 		}
 	}
 }

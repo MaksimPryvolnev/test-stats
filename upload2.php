@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', true);
-error_reporting(E_ALL);
-
 $pagetitle = 'home';
 
 if (!empty($_POST)) {
