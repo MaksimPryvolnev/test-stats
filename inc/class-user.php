@@ -43,8 +43,8 @@ class TSUser {
 		$mail->isSMTP();                                      // Set mailer to use SMTP
 		$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 		$mail->SMTPAuth = true;                               // Enable SMTP authentication
-		$mail->Username = 'postmaster@sandbox9f38bd5e5d2b4c01a3473132d12115e5.mailgun.org';                 // SMTP username
-		$mail->Password = 'fcaf201d9b0f0f0b029514148ade5da5';                           // SMTP password
+		$mail->Username = 'xxxx';                 // SMTP username
+		$mail->Password = 'xxxx';                           // SMTP password
 		$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 		$mail->Port = 587;                                    // TCP port to connect to
 		echo "$email";
